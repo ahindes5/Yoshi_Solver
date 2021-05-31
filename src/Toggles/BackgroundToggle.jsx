@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import * as React from "react";
-import {AppContext} from "./AppContext";
+import {AppContext} from "../AppContext";
+import './Toggles.css';
 
 export function BackgroundToggle() {
 

@@ -26,28 +26,6 @@ html, body, #root {
   align-items: center;
 }
 
-.background-toggle-container {
-  width: 200px;
-  height: 65px;
-  position: absolute;
-  background-color: #DB5C83;
-  top: 105px;
-  border-radius: 8px;
-  margin-right: 640px;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #FFD85F;
-}
-
-.change-background-toggle {
-  font-size: 28px;
-  text-align: center;
-  font-weight: 600;
-  font-family: "Lucida Console", monospace;
-}
-
 .count {
   width: 145px;
   height: 50px;
@@ -82,22 +60,8 @@ html, body, #root {
   margin-left: 5px;
 }
 
-.normal-background {
-  height: 894px;
-  width: 1024px;
-}
-
 .gridContainer {
   width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.background-background {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: aliceblue;
   display: flex;
   justify-content: center;
 }
@@ -147,40 +111,4 @@ html, body, #root {
   background-image: url("/src/blocks/yellow.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-}
-
-.yoshi-background {
-  background-image: url("/src/backgrounds/Yoshi_background.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 896px;
-}
-
-.blarg-background {
-  background-image: url("/src/backgrounds/blarg_background.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 896px;
-}
-
-.froggy-background {
-  background-image: url("/src/backgrounds/froggy_background.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 896px;
-}
-
-.lakitu-background {
-  background-image: url("/src/backgrounds/lakitu_background.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 896px;
-}
-
-.poochy-background {
-  background-image: url("/src/backgrounds/poochy_background.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 896px;
-}
-
-.raven-background {
-  background-image: url("/src/backgrounds/raven_background.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 896px;
 }

@@ -10,10 +10,15 @@ export function AppContextProvider({children}) {
   const [background, setBackground] = React.useState('yoshi-background');
   const backgrounds = ['yoshi-background', 'blarg-background', 'froggy-background', 'lakitu-background', 'poochy-background', 'raven-background'];
 
+  const reset = () => {
+    setBoard([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
+    setNumberOfTurns(0);
+  }
 
   const toggleBackground = () => {
-    setBackgroundIdx((backgroundIdx + 1)%6);
-    setBackground(backgrounds[backgroundIdx]);
+    let newBackgroundIdx = (backgroundIdx + 1)%6;
+    setBackgroundIdx(newBackgroundIdx);
+    setBackground(backgrounds[newBackgroundIdx]);
   }
 
   const incrementCount = () => {
@@ -43,7 +48,8 @@ export function AppContextProvider({children}) {
         background,
         numberOfTurns,
         incrementCount,
-        decrementCount
+        decrementCount,
+        reset
       }}
     >
       {children}

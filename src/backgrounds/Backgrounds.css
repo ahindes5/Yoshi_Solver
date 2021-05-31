@@ -1,0 +1,39 @@
+.yoshi-background {
+    background-image: url("/src/backgrounds/Yoshi_background.png");
+}
+
+.blarg-background {
+    background-image: url("/src/backgrounds/blarg_background.png");
+}
+
+.froggy-background {
+    background-image: url("/src/backgrounds/froggy_background.png");
+}
+
+.lakitu-background {
+    background-image: url("/src/backgrounds/lakitu_background.png");
+}
+
+.poochy-background {
+    background-image: url("/src/backgrounds/poochy_background.png");
+}
+
+.raven-background {
+    background-image: url("/src/backgrounds/raven_background.png");
+}
+
+.normal-background {
+    height: 894px;
+    width: 1024px;
+    background-repeat: no-repeat;
+    background-size: 1024px 896px;
+}
+
+.background-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
