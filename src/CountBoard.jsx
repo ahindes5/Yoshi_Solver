@@ -11,8 +11,8 @@ export function CountBoard(props) {
       <div className={'number-of-turns-container'}>
         <div className={'number-of-turns'}>{numberOfTurns < 10 ? '0' + numberOfTurns : numberOfTurns}</div>
         <div className={'arrow-container'}>
-          <div style={{marginBottom: '12px'}} className={'cursorPointer'} onClick={()=>incrementCount()}>▲</div>
-          <div onClick={()=>decrementCount()} className={'cursorPointer'}>▼</div>
+          <div style={{marginBottom: '12px'}} className={'cursor-pointer'} onClick={()=>incrementCount()}>▲</div>
+          <div onClick={()=>decrementCount()} className={'cursor-pointer'}>▼</div>
         </div>
       </div>
     </div>

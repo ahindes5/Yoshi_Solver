@@ -34,8 +34,7 @@ export function TetrisBlock(props) {
   }
 
   return (
-    <div className={cx(findColor(board[x][y]), 'cursorPointer')} onClick={()=>incrementBlock()}>
-    </div>
+    <div className={cx(findColor(board[x][y]), 'cursor-pointer')} onClick={()=>incrementBlock()}></div>
   )
 
 }
