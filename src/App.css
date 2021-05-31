@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+html, body, #root {
+  margin: 0;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainGrid {
+  margin-top: 222px;
+  margin-left: 64px;
+  display: grid;
+  grid-template-columns: 64px 64px 64px 64px 64px 64px;
+  grid-template-rows: 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.count-container {
+  width: 165px;
+  height: 188px;
+  position: absolute;
+  background-color: #D3D6D9;
+  margin-left: 700px;
+  top: 230px;
+  border-radius: 8px;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.count {
+  width: 145px;
+  height: 50px;
+  background-color: #DB5C83;
+  color: #FFD85F;
+  border-radius: 9px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  font-family: "Lucida Console", monospace;
+}
+
+.number-of-turns-container {
+  margin-top: -12px;
+  font-family: "Lucida Console", monospace;
+  display: flex;
+}
+
+.number-of-turns {
+  color: #002578;
+  font-size: 128px;
+  letter-spacing: -14px;
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.normal-background {
+  height: 894px;
+  width: 1024px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gridContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.background-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+}
+
+.blue-block {
+  background-image: url("blocks/blue.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.light-blue-block {
+  background-image: url("blocks/lightBlue.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.green-block {
+  background-image: url("/src/blocks/green.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.red-block {
+  background-image: url("/src/blocks/red.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.purple-block {
+  background-image: url("/src/blocks/purple.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.yellow-block {
+  background-image: url("/src/blocks/yellow.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.yoshi-background {
+  background-image: url("/src/backgrounds/Yoshi_background.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 896px;
+}
+
+.blarg-background {
+  background-image: url("/src/backgrounds/blarg_background.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 896px;
+}
+
+.froggy-background {
+  background-image: url("/src/backgrounds/froggy_background.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 896px;
+}
+
+.lakitu-background {
+  background-image: url("/src/backgrounds/lakitu_background.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 896px;
+}
+
+.poochy-background {
+  background-image: url("/src/backgrounds/poochy_background.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 896px;
+}
+
+.raven-background {
+  background-image: url("/src/backgrounds/raven_background.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 896px;
 }
