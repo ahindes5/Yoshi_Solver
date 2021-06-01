@@ -8,11 +8,16 @@ export function AppContextProvider({children}) {
   const [numberOfTurns, setNumberOfTurns] = React.useState(1);
   const [backgroundIdx, setBackgroundIdx] = React.useState(0);
   const [background, setBackground] = React.useState('yoshi-background');
+  const [solution, setSolution] = React.useState(null);
+  const [solutionIdx, setSolutionIdx] = React.useState(0);
   const backgrounds = ['yoshi-background', 'blarg-background', 'froggy-background', 'lakitu-background', 'poochy-background', 'raven-background'];
+
 
   const reset = () => {
     setBoard([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
     setNumberOfTurns(1);
+    setSolution(null);
+    setSolutionIdx(0);
   }
 
   const toggleBackground = () => {
@@ -22,14 +27,38 @@ export function AppContextProvider({children}) {
   }
 
   const incrementCount = () => {
-    if (numberOfTurns != 99) {
+    if (numberOfTurns !== 99) {
       setNumberOfTurns(numberOfTurns+1);
     }
   }
 
   const decrementCount = () => {
-    if (numberOfTurns != 1) {
+    if (numberOfTurns !== 1) {
       setNumberOfTurns(numberOfTurns-1);
+    }
+  }
+
+  const incrementSolutionIdx = () => {
+    if (solutionIdx < numberOfTurns -1) {
+      let newSolutionIdx = solutionIdx + 1;
+      if (newSolutionIdx === numberOfTurns -1) {
+        setBoard(solution.previousBoard);
+      } else {
+        setBoard(solution.previousTurns[newSolutionIdx].previousBoard);
+      }
+      setSolutionIdx(newSolutionIdx);
+    }
+  }
+
+  const decrementSolutionIdx = () => {
+    if (solutionIdx > 0) {
+      let newSolutionIdx = solutionIdx - 1;
+      if (newSolutionIdx === numberOfTurns -1) {
+        setBoard(solution.previousBoard);
+      } else {
+        setBoard(solution.previousTurns[newSolutionIdx].previousBoard);
+      }
+      setSolutionIdx(newSolutionIdx);
     }
   }
 
@@ -37,6 +66,10 @@ export function AppContextProvider({children}) {
     let newBoard = [...board];
     newBoard[rowIdx][columnIdx] = value;
     setBoard(newBoard)
+  }
+
+  const submitSolution = (solution) => {
+    setSolution(solution)
   }
 
   return (
@@ -49,7 +82,12 @@ export function AppContextProvider({children}) {
         numberOfTurns,
         incrementCount,
         decrementCount,
-        reset
+        reset,
+        submitSolution,
+        solution,
+        incrementSolutionIdx,
+        decrementSolutionIdx,
+        solutionIdx
       }}
     >
       {children}

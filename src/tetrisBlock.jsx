@@ -4,7 +4,7 @@ import cx from "classnames";
 
 export function TetrisBlock(props) {
 
-  const {columnIdx, rowIdx} = props;
+  const {columnIdx, rowIdx, highlightLeft, highlightRight} = props;
   const {board, changeBoard} = React.useContext(AppContext);
 
   const incrementBlock = () => {
@@ -34,9 +34,16 @@ export function TetrisBlock(props) {
   }
 
   return (
-    <div className={cx(findColor(board[rowIdx][columnIdx]), 'cursor-pointer')} onClick={()=>incrementBlock()}>
-      {`${rowIdx} ${columnIdx}`}
-    </div>
+    <>
+      <div className={cx( findColor(board[rowIdx][columnIdx]), 'cursor-pointer')} onClick={()=>incrementBlock()}>
+        {highlightLeft && (<><div className={'highlight-top'}></div>
+                            <div className={'left-highlight-left'}></div>
+                            <div className={'highlight-bottom'}></div></>)}
+        {highlightRight && (<><div className={'highlight-top'}></div>
+          <div className={'right-highlight-right'}></div>
+          <div className={'highlight-bottom'}></div></>)}
+      </div>
+    </>
   )
 
 }

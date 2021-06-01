@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 export function CountBoard(props) {
 
-  const {numberOfTurns, incrementCount, decrementCount} = React.useContext(AppContext);
+  const {numberOfTurns, incrementCount, decrementCount, solution} = React.useContext(AppContext);
 
   return (
     <div className={'count-container'}>
@@ -12,8 +12,11 @@ export function CountBoard(props) {
       <div className={'number-of-turns-container'}>
         <div className={'number-of-turns'}>{numberOfTurns < 10 ? '0' + numberOfTurns : numberOfTurns}</div>
         <div className={'arrow-container'}>
-          <div style={{marginBottom: '12px'}} className={cx('cursor-pointer', 'arrow')} onClick={()=>incrementCount()}>▲</div>
-          <div onClick={()=>decrementCount()} className={cx('cursor-pointer', 'arrow')}>▼</div>
+          {!solution && (<>
+            <div style={{marginBottom: '12px'}} className={cx('cursor-pointer', 'arrow')} onClick={()=>incrementCount()}>▲</div>
+            <div onClick={()=>decrementCount()} className={cx('cursor-pointer', 'arrow')}>▼</div></>
+            )
+          }
         </div>
       </div>
     </div>

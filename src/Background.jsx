@@ -6,20 +6,22 @@ import {BackgroundToggle} from "./Toggles/BackgroundToggle";
 import {ResetToggle} from "./Toggles/ResetToggle";
 import "./backgrounds/Backgrounds.css"
 import {SolveToggle} from "./Toggles/SolveToggle";
+import {SolutionArrowToggles} from "./Toggles/SolutionArrowToggles";
 
 export function Background(props) {
 
-  const {background} = React.useContext(AppContext);
+  const {background, solution} = React.useContext(AppContext);
 
   return (
       <div className={'background-background'}>
         <BackgroundToggle/>
-        <div className={cx(background, 'normal-background')}>
+        <div className={cx(background, 'normal-background', 'gradient-border')}>
           {props.children}
         </div>
         <ResetToggle/>
         <CountBoard/>
-        <SolveToggle/>
+        {!solution && <SolveToggle/>}
+        {solution && <SolutionArrowToggles/>}
       </div>
   )
 }

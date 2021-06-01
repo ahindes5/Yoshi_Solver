@@ -17,7 +17,7 @@ html, body, #root {
   height: 188px;
   position: absolute;
   background-color: #D3D6D9;
-  margin-left: 700px;
+  margin-left: 710px;
   top: 230px;
   border-radius: 8px;
   border: 2px solid black;
@@ -58,6 +58,7 @@ html, body, #root {
   flex-direction: column;
   justify-content: center;
   margin-left: 5px;
+  width: 12px;
 }
 
 .arrow {
@@ -85,34 +86,77 @@ html, body, #root {
   background-image: url("blocks/blue.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position: relative;
 }
 
 .light-blue-block {
   background-image: url("blocks/lightBlue.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position: relative;
 }
 
 .green-block {
   background-image: url("/src/blocks/green.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position: relative;
 }
 
 .red-block {
   background-image: url("/src/blocks/red.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position: relative;
 }
 
 .purple-block {
   background-image: url("/src/blocks/purple.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position: relative;
 }
 
 .yellow-block {
   background-image: url("/src/blocks/yellow.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position: relative;
+}
+
+.left-highlight-left {
+  position: absolute;
+  height: 74px;
+  width: 5px;
+  background-color: yellow;
+  left: -5px;
+  z-index: 2;
+  top: -5px;
+}
+
+.right-highlight-right {
+  position: absolute;
+  height: 64px;
+  width: 5px;
+  background-color: yellow;
+  right: -5px;
+  z-index: 2;
+}
+
+.highlight-top {
+  position: absolute;
+  height: 5px;
+  width: 69px;
+  background-color: yellow;
+  top: -5px;
+  z-index: 2;
+}
+
+.highlight-bottom {
+  position: absolute;
+  height: 5px;
+  width: 69px;
+  background-color: yellow;
+  top: 64px;
+  z-index: 2;
 }

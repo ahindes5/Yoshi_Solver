@@ -5,7 +5,7 @@ import {AppContext} from "../AppContext";
 
 export function SolveToggle() {
 
-  const {board, numberOfTurns} = React.useContext(AppContext);
+  const {board, numberOfTurns, submitSolution} = React.useContext(AppContext);
 
   const checkIfSolved = (optionToCheck) => {
     for (let j = 0; j < 12; j++) {
@@ -91,7 +91,8 @@ export function SolveToggle() {
                 {
                   previousBoard: board,
                   currentBoard: boardCopy,
-                  moveMade: {row: j, column: i}
+                  moveMade: {row: j, column: i},
+                  previousTurns: []
                 }
               );
             }
@@ -104,7 +105,7 @@ export function SolveToggle() {
                 boardCopy[j][i+1] = temp;
                 newOptions.push(
                   {
-                    previousTurn: option,
+                    previousTurns: option.previousTurns.concat(option),
                     previousBoard: option.currentBoard,
                     currentBoard: boardCopy,
                     moveMade: {row: j, column: i}
@@ -131,11 +132,14 @@ export function SolveToggle() {
       }
     }
 
-    options.forEach(op=>{
-      if(checkIfSolved(op.currentBoard)) {
-        console.log(op);
+    for (let allOptions = 0; allOptions < options.length; allOptions++) {
+      if(checkIfSolved(options[allOptions].currentBoard)) {
+        submitSolution(options[allOptions]);
+        return;
       }
-    });
+    }
+
+    console.log('Failed to find solution');
 
   }
 
