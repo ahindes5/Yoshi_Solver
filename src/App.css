@@ -49,6 +49,7 @@ html, body, #root {
 
 .number-of-turns {
   color: #002578;
+  font-weight: 800;
   font-size: 128px;
   letter-spacing: -14px;
 }
