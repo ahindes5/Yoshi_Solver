@@ -6,8 +6,12 @@ Make sure to change the number of turns before clicking solve.
 If no solution is found nothing will happen.
 If a solution is found use the arrows to step through each move
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### `yarn start`
 
