@@ -5,7 +5,7 @@ html, body, #root {
 }
 
 .mainGrid {
-  margin-top: 222px;
+  margin-top: 93px;
   margin-left: 64px;
   display: grid;
   grid-template-columns: 64px 64px 64px 64px 64px 64px;
@@ -58,6 +58,10 @@ html, body, #root {
   flex-direction: column;
   justify-content: center;
   margin-left: 5px;
+}
+
+.arrow {
+  font-size: 20px;
 }
 
 .gridContainer {

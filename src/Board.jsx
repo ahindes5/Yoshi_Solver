@@ -6,19 +6,15 @@ export function Board (props) {
 
   const {board} = React.useContext(AppContext);
 
-  React.useEffect(() => {
-    console.log(board)
-  }, [board]);
-
   return <div>
     <div className={'gridContainer'}>
       <div className={'mainGrid'}>
-        {board.map((row, idx) => (
-          row.map((square, idy) => (
+        {board.map((row, rowIdx) => (
+          row.map((square, columnIdx) => (
             <TetrisBlock
-              key={`${idx},${idy}`}
-              x={idx}
-              y={idy}
+              key={`${columnIdx},${rowIdx}`}
+              columnIdx={columnIdx}
+              rowIdx={rowIdx}
               value={square}
             />
           ))

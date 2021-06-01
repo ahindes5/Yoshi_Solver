@@ -3,7 +3,7 @@ import * as React from "react";
 import './Toggles.css';
 import {AppContext} from "../AppContext";
 
-export function Reset() {
+export function ResetToggle() {
 
   const {reset} = React.useContext(AppContext);
 

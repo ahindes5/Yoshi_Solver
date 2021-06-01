@@ -4,15 +4,15 @@ export const AppContext = React.createContext(null);
 
 export function AppContextProvider({children}) {
 
-  const [board, setBoard] = React.useState([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
-  const [numberOfTurns, setNumberOfTurns] = React.useState(0);
+  const [board, setBoard] = React.useState([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
+  const [numberOfTurns, setNumberOfTurns] = React.useState(1);
   const [backgroundIdx, setBackgroundIdx] = React.useState(0);
   const [background, setBackground] = React.useState('yoshi-background');
   const backgrounds = ['yoshi-background', 'blarg-background', 'froggy-background', 'lakitu-background', 'poochy-background', 'raven-background'];
 
   const reset = () => {
-    setBoard([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
-    setNumberOfTurns(0);
+    setBoard([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
+    setNumberOfTurns(1);
   }
 
   const toggleBackground = () => {
@@ -28,14 +28,14 @@ export function AppContextProvider({children}) {
   }
 
   const decrementCount = () => {
-    if (numberOfTurns != 0) {
+    if (numberOfTurns != 1) {
       setNumberOfTurns(numberOfTurns-1);
     }
   }
 
-  const changeBoard = (x,y,value) => {
+  const changeBoard = (rowIdx, columnIdx, value) => {
     let newBoard = [...board];
-    newBoard[x][y] = value;
+    newBoard[rowIdx][columnIdx] = value;
     setBoard(newBoard)
   }
 

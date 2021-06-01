@@ -3,8 +3,9 @@ import {AppContext} from "./AppContext";
 import cx from 'classnames';
 import {CountBoard} from "./CountBoard";
 import {BackgroundToggle} from "./Toggles/BackgroundToggle";
-import {Reset} from "./Toggles/Reset";
+import {ResetToggle} from "./Toggles/ResetToggle";
 import "./backgrounds/Backgrounds.css"
+import {SolveToggle} from "./Toggles/SolveToggle";
 
 export function Background(props) {
 
@@ -16,8 +17,9 @@ export function Background(props) {
         <div className={cx(background, 'normal-background')}>
           {props.children}
         </div>
-        <Reset/>
+        <ResetToggle/>
         <CountBoard/>
+        <SolveToggle/>
       </div>
   )
 }
