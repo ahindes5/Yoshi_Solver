@@ -10,7 +10,7 @@ export function AppContextProvider({children}) {
   const [background, setBackground] = React.useState('yoshi-background');
   const [solution, setSolution] = React.useState(null);
   const [solutionIdx, setSolutionIdx] = React.useState(0);
-  const backgrounds = ['yoshi-background', 'blarg-background', 'froggy-background', 'lakitu-background', 'poochy-background', 'raven-background'];
+  const backgrounds = ['yoshi-background', 'lakitu-background', 'poochy-background', 'froggy-background', 'blarg-background', 'raven-background'];
 
 
   const reset = () => {
