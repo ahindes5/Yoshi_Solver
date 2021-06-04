@@ -5,7 +5,7 @@ import cx from "classnames";
 export function TetrisBlock(props) {
 
   const {columnIdx, rowIdx, highlightLeft, highlightRight} = props;
-  const {board, changeBoard} = React.useContext(AppContext);
+  const {board, changeBoard, solution} = React.useContext(AppContext);
 
   const incrementBlock = () => {
     changeBoard(rowIdx, columnIdx, (board[rowIdx][columnIdx] + 1)%7);
@@ -35,13 +35,23 @@ export function TetrisBlock(props) {
 
   return (
     <>
-      <div className={cx((highlightRight||highlightLeft) ? 'blockWithHighlight':'', findColor(board[rowIdx][columnIdx]), 'cursor-pointer')} onClick={()=>incrementBlock()}>
-        {highlightLeft && (<><div className={'highlight-top'}></div>
-                            <div className={'left-highlight-left'}></div>
-                            <div className={'highlight-bottom'}></div></>)}
-        {highlightRight && (<><div className={'highlight-top'}></div>
-          <div className={'right-highlight-right'}></div>
+      <div className={cx((highlightRight||highlightLeft) ? 'blockWithHighlight':'', findColor(board[rowIdx][columnIdx]), !solution ? 'cursor-pointer' : '')}
+           onClick={()=> {
+             if (!solution) {
+               incrementBlock()
+             }
+           }
+      }
+      >
+        {highlightLeft && (<>
+          <div className={'highlight-top'}></div>
+          <div className={'left-highlight-left'}></div>
           <div className={'highlight-bottom'}></div></>)}
+        {highlightRight && (<>
+          <div className={'highlight-top'}></div>
+          <div className={'right-highlight-right'}></div>
+          <div className={'highlight-bottom'}></div>
+        </>)}
       </div>
     </>
   )
