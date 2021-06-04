@@ -3,9 +3,9 @@
     height: 65px;
     position: absolute;
     background-color: #DB5C83;
-    top: 115px;
+    top: 106px;
+    left: 87px;
     border-radius: 8px;
-    margin-right: 640px;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,6 @@
     background-color: #DB5C83;
     top: 150px;
     border-radius: 8px;
-    margin-left: 710px;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -49,7 +48,6 @@
     background-color: #DB5C83;
     top: 462px;
     border-radius: 8px;
-    margin-left: 710px;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -88,7 +86,6 @@
     position: absolute;
     top: 462px;
     border-radius: 8px;
-    margin-left: 710px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;

@@ -2,6 +2,7 @@ html, body, #root {
   margin: 0;
   height: 100%;
   min-width: 1040px;
+  min-height: 830px;
 }
 
 .mainGrid {
@@ -17,13 +18,18 @@ html, body, #root {
   height: 188px;
   position: absolute;
   background-color: #D3D6D9;
-  margin-left: 710px;
   top: 230px;
   border-radius: 8px;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.right-menu-container {
+  position: absolute;
+  top: 10px;
+  left: 779px;
 }
 
 .count {
@@ -103,28 +109,28 @@ html, body, #root {
 }
 
 .green-block {
-  background-image: url("/src/blocks/green.png");
+  background-image: url("blocks/green.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
 
 .red-block {
-  background-image: url("/src/blocks/red.png");
+  background-image: url("blocks/red.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
 
 .purple-block {
-  background-image: url("/src/blocks/purple.png");
+  background-image: url("blocks/purple.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
 }
 
 .yellow-block {
-  background-image: url("/src/blocks/yellow.png");
+  background-image: url("blocks/yellow.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;

@@ -14,14 +14,16 @@ export function Background(props) {
 
   return (
       <div className={'background-background'}>
-        <BackgroundToggle/>
         <div className={cx(background, 'normal-background', 'gradient-border')}>
+          <BackgroundToggle/>
           {props.children}
+          <div className={'right-menu-container'}>
+            <ResetToggle/>
+            <CountBoard/>
+            {!solution && <SolveToggle/>}
+            {solution && <SolutionArrowToggles/>}
+          </div>
         </div>
-        <ResetToggle/>
-        <CountBoard/>
-        {!solution && <SolveToggle/>}
-        {solution && <SolutionArrowToggles/>}
       </div>
   )
 }

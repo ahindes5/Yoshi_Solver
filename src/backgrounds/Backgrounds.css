@@ -1,25 +1,25 @@
 .yoshi-background {
-    background-image: url("/src/backgrounds/Yoshi_background.png");
+    background-image: url("./Yoshi_background.png");
 }
 
 .blarg-background {
-    background-image: url("/src/backgrounds/blarg_background.png");
+    background-image: url("./blarg_background.png");
 }
 
 .froggy-background {
-    background-image: url("/src/backgrounds/froggy_background.png");
+    background-image: url("./froggy_background.png");
 }
 
 .lakitu-background {
-    background-image: url("/src/backgrounds/lakitu_background.png");
+    background-image: url("./lakitu_background.png");
 }
 
 .poochy-background {
-    background-image: url("/src/backgrounds/poochy_background.png");
+    background-image: url("./poochy_background.png");
 }
 
 .raven-background {
-    background-image: url("/src/backgrounds/raven_background.png");
+    background-image: url("./raven_background.png");
 }
 
 .normal-background {
@@ -29,13 +29,15 @@
     background-size: 1024px 896px;
     border: 10px solid black;
     border-radius: 6px;
+    position: relative;
 }
 
 .background-background {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("/src/backgrounds/tetrisbackground.png");
+    background-image: url("./tetrisbackground.png");
     display: flex;
+    align-items: center;
     justify-content: center;
 }
