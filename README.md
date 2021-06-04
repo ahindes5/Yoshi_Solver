@@ -1,12 +1,19 @@
 Yoshi solver is the long awaited solution to every level in puzzle mode in the 1996 Super nintendo classic Tetris attack
 
 Change the background to the one that makes you happiest.
+
+
 Click on squares to input your puzzle.
 Make sure to change the number of turns before clicking solve.
 If no solution is found nothing will happen.
+
+![Screen Shot 2021-06-04 at 2 17 31 AM](https://user-images.githubusercontent.com/6692576/120770339-45088400-c4db-11eb-93ec-976d7dcfc8fa.png)
+
+
 If a solution is found use the arrows to step through each move
+On hard puzzles you can just click through a few steps and use it as hints!
 
-
+![Screen Shot 2021-06-04 at 2 17 59 AM](https://user-images.githubusercontent.com/6692576/120770442-5fdaf880-c4db-11eb-97df-f90ebdcbae86.png)
 
 
 
