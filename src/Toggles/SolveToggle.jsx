@@ -134,6 +134,10 @@ export function SolveToggle() {
         while (keepGoing) {
           let wasAMatch = checkForMatches(options, op);
           let blockFell = makeBlocksFall(options, op);
+          let blockTotallyFell = blockFell;
+          while (blockTotallyFell) {
+            blockTotallyFell = makeBlocksFall(options, op);
+          }
           keepGoing = wasAMatch || blockFell;
         }
       }
