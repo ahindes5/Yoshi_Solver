@@ -75,6 +75,7 @@ export function SolveToggle() {
   }
 
   const solve = () => {
+    let memoization = new Set();
     let options = [];
     let newOptions = [];
     for (let turns = 0; turns < numberOfTurns; turns++) {
@@ -87,14 +88,17 @@ export function SolveToggle() {
               let temp = boardCopy[j][i];
               boardCopy[j][i] = boardCopy[j][i+1];
               boardCopy[j][i+1] = temp;
-              options.push(
-                {
-                  previousBoard: board,
-                  currentBoard: boardCopy,
-                  moveMade: {row: j, column: i},
-                  previousTurns: []
-                }
-              );
+              if (!memoization.has(JSON.stringify(boardCopy))) {
+                memoization.add(JSON.stringify(boardCopy));
+                options.push(
+                  {
+                    previousBoard: board,
+                    currentBoard: boardCopy,
+                    moveMade: {row: j, column: i},
+                    previousTurns: []
+                  }
+                );
+              }
             }
           } else {
             options.forEach(option => {
@@ -103,14 +107,17 @@ export function SolveToggle() {
                 let temp = boardCopy[j][i];
                 boardCopy[j][i] = boardCopy[j][i+1];
                 boardCopy[j][i+1] = temp;
-                newOptions.push(
-                  {
-                    previousTurns: option.previousTurns.concat(option),
-                    previousBoard: option.currentBoard,
-                    currentBoard: boardCopy,
-                    moveMade: {row: j, column: i}
-                  }
-                );
+                if (!memoization.has(JSON.stringify(boardCopy))) {
+                  memoization.add(JSON.stringify(boardCopy));
+                  newOptions.push(
+                    {
+                      previousTurns: option.previousTurns.concat(option),
+                      previousBoard: option.currentBoard,
+                      currentBoard: boardCopy,
+                      moveMade: {row: j, column: i}
+                    }
+                  );
+                }
               }
             })
           }
