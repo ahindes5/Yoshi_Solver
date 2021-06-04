@@ -59,7 +59,7 @@ export function SolveToggle() {
     let currentBoard = options[optionIdx].currentBoard;
     let blockFell = false;
 
-    for (let j = 10; j >= 0; j--) {
+    for (let j = 0; j < 11; j++) {
       for (let i = 0; i < 6; i++) {
         if (currentBoard[j][i] > 0 && currentBoard[j+1][i] === 0) {
           if (!blockFell) {
