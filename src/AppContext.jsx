@@ -6,6 +6,7 @@ export function AppContextProvider({children}) {
 
   const [board, setBoard] = React.useState([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]]);
   const [numberOfTurns, setNumberOfTurns] = React.useState(1);
+  const [numberOfTurnsForSolve, setNumberOfTurnsForSolve] = React.useState(1);
   const [backgroundIdx, setBackgroundIdx] = React.useState(0);
   const [background, setBackground] = React.useState('yoshi-background');
   const [solution, setSolution] = React.useState(null);
@@ -28,19 +29,24 @@ export function AppContextProvider({children}) {
 
   const incrementCount = () => {
     if (numberOfTurns !== 99) {
-      setNumberOfTurns(numberOfTurns+1);
+      let newNumberOfTurns = numberOfTurns + 1;
+      setNumberOfTurns(newNumberOfTurns);
+      setNumberOfTurnsForSolve(newNumberOfTurns);
     }
   }
 
   const decrementCount = () => {
     if (numberOfTurns !== 1) {
-      setNumberOfTurns(numberOfTurns-1);
+      let newNumberOfTurns = numberOfTurns - 1;
+      setNumberOfTurns(newNumberOfTurns);
+      setNumberOfTurnsForSolve(newNumberOfTurns);
     }
   }
 
   const incrementSolutionIdx = () => {
     if (solutionIdx < numberOfTurns -1) {
       let newSolutionIdx = solutionIdx + 1;
+      setNumberOfTurnsForSolve(numberOfTurnsForSolve -1);
       if (newSolutionIdx === numberOfTurns -1) {
         setBoard(solution.previousBoard);
       } else {
@@ -53,6 +59,7 @@ export function AppContextProvider({children}) {
   const decrementSolutionIdx = () => {
     if (solutionIdx > 0) {
       let newSolutionIdx = solutionIdx - 1;
+      setNumberOfTurnsForSolve(numberOfTurnsForSolve +1);
       if (newSolutionIdx === numberOfTurns -1) {
         setBoard(solution.previousBoard);
       } else {
@@ -87,6 +94,7 @@ export function AppContextProvider({children}) {
         solution,
         incrementSolutionIdx,
         decrementSolutionIdx,
+        numberOfTurnsForSolve,
         solutionIdx
       }}
     >
